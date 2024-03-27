@@ -18,6 +18,12 @@ return {
             '.git',
           },
         },
+        follow_current_file = {
+          enabled = true, -- This will find and focus the file in the active buffer every time
+          --               -- the current file is changed while the tree is open.
+          leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+        },
+        use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
       },
     }
     vim.keymap.set('n', '<C-N>', '<Cmd>Neotree toggle<CR>', { desc = '[N]eo[T]ree' })
